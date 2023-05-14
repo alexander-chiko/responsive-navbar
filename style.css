@@ -6,6 +6,10 @@
     box-sizing: border-box;
 }
 
+body {
+    overflow-x: hidden;
+}
+
 nav {
     display: flex;
     justify-content: space-between;
@@ -36,7 +40,7 @@ nav li:hover {
 
 .list {
     height: 1.5rem;
-    display: flex;
+    display: none;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
@@ -94,6 +98,54 @@ input:checked ~ span:nth-child(4) {
 /* Ukuran Mobile */
 @media screen and (max-width: 576px) {
     nav ul {
-        display: none;
+        position: absolute;
+        top: 0;
+        right: 0;
+        flex-direction: column;
+        height: 100vh;
+        width: 60%;
+        background-color: violet;
+        align-items: center;
+        justify-content: space-evenly;
+        z-index: -1;
+        transform: translateX(100%);
+        filter: opacity(0);
+        transition: all 1s cubic-bezier(0.23, 1, 0.320, 1);
+    }
+    .slide {
+        transform: translateX(0);
+        filter: opacity(1);
+    }
+    .li1 {
+        transform: translateX(2rem);
+        filter: opacity(0);
+        transition: all .3s ease-out .3s;
+    }
+    .li2 {
+        transform: translateX(2rem);
+        filter: opacity(0);
+        transition: all .3s ease-out .5s;
+    }
+    .li3 {
+        transform: translateX(2rem);
+        filter: opacity(0);
+        transition: all .3s ease-out .7s;
+    }
+    .li4 {
+        transform: translateX(2rem);
+        filter: opacity(0);
+        transition: all .3s ease-out .9s;
+    }
+    .li5 {
+        transform: translateX(2rem);
+        filter: opacity(0);
+        transition: all .3s ease-out 1.1s;
+    }
+    .geser1 {
+        transform: translateX(0rem);
+        filter: opacity(1);
+    }
+    .list {
+        display: flex;
     }
 }
